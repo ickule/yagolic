@@ -1,0 +1,6 @@
+.vscode/
+bin/
+build/
+*[M|m]ake*
+!CMakeLists.txt
+.cache/
