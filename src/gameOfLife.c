@@ -9,7 +9,7 @@ int main() {
   printf("Welcome to this game of life! \n\n");
   printf("How many ROWS shall your board have ?\n");
   scanf("%d", &rows); // NOLINT acanf_s is not implemented in gnu c standard
-  printf("How many COLLUMNS shall your board have ?\n");
+  printf("How many COLUMNS shall your board have ?\n");
   scanf("%d", &cols); // NOLINT acanf_s is not implemented in gnu c standard
   while ((sc = getchar()) != '\n' && sc != EOF)
     ; // discard the trailing '\n' character
