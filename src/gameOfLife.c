@@ -12,7 +12,7 @@ int main() {
   printf("How many COLUMNS shall your board have ?\n");
   scanf("%d", &cols); // NOLINT acanf_s is not implemented in gnu c standard
   while ((sc = getchar()) != '\n' && sc != EOF)
-    ; // discard the trailing '\n' character
+    ; /* discard the trailing '\n' character */
   system("clear");
 
   board = calloc(rows * cols, sizeof *board);

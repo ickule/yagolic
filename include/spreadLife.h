@@ -7,6 +7,6 @@
 #include "countNeighbours.h"
 
 void spreadLife(int *board, int rows, int cols);
-// Scan the board and spread life according to conway's rules
+/* Scan the board and spread life according to conway's rules */
 
-#endif  // SPREAD_LIFE_H_INCLUDED
+#endif /* SPREAD_LIFE_H_INCLUDED */

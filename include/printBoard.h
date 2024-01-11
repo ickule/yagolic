@@ -4,6 +4,6 @@
 #include <stdio.h>
 
 void printBoard(int *array, int rows, int cols);
-// Print the board on the command line
+/* Print the board on the command line */
 
-#endif  // PRINT_BOARD_H_INCLUDED
+#endif /* PRINT_BOARD_H_INCLUDED */
