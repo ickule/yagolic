@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 void spreadLife(int *board, int rows, int cols)
-// Scan the field and applies the rules to it
+/* Scan the field and applies the rules to it */
 {
   int neighbours;
   int *oldBoard;
@@ -13,16 +13,16 @@ void spreadLife(int *board, int rows, int cols)
     for (int j = 0; j < cols; j++) {
       neighbours = countNeighbours(i, j, oldBoard, rows, cols);
       if (oldBoard[i * cols + j]) {
-        // The cell is alive
+        /* The cell is alive */
         if (neighbours < 2 || 3 < neighbours)
-        // Cell dies if there are less than 2 or more than 3 neighbours
+        /* Cell dies if there are less than 2 or more than 3 neighbours */
         {
           board[i * cols + j] = 0;
         }
       } else {
-        // The cell is dead
+        /* The cell is dead */
         if (neighbours == 3)
-        // Cell comes to life if there is exactly 3 neighbours
+        /* Cell comes to life if there is exactly 3 neighbours */
         {
           board[i * cols + j] = 1;
         }

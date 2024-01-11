@@ -2,6 +2,6 @@
 #define COUNT_NEIGHBOURS_H_INCLUDED
 
 int countNeighbours(int x, int y, int *board, int rows, int cols);
-// Return the number of neighbours of the (x,y) point
+/* Return the number of neighbours of the (x,y) point */
 
-#endif  // COUNT_NEIGHBOURS_H_INCLUDED
+#endif /* COUNT_NEIGHBOURS_H_INCLUDED */
