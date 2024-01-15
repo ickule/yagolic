@@ -1,4 +1,4 @@
-#include "../include/printBoard.h"
+#include "printBoard.h"
 
 void printBoard(int *board, int rows, int cols)
 /* Print the board on the command line */

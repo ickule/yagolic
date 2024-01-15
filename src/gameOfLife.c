@@ -1,4 +1,4 @@
-#include "../include/gameOfLife.h"
+#include "gameOfLife.h"
 
 int main() {
   int rows, cols, i = 0, exit = 0;
