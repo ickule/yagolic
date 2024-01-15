@@ -13,7 +13,7 @@ void spreadLife(int *board, int rows, int cols)
       neighbours = countNeighbours(i, j, oldBoard, rows, cols);
       if (oldBoard[i * cols + j]) {
         /* The cell is alive */
-        if (neighbours < 2 || 3 < neighbours)
+        if (neighbours < 2 || neighbours < 3)
         /* Cell dies if there are less than 2 or more than 3 neighbours */
         {
           board[i * cols + j] = 0;
