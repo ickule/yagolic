@@ -1,4 +1,4 @@
-#include "../include/randomInitBoard.h"
+#include "randomInitBoard.h"
 
 void randomInitBoard(int *board, int rows, int cols)
 /* Initialise the board with random alive/dead */

@@ -1,4 +1,4 @@
-#include "../include/countNeighbours.h"
+#include "countNeighbours.h"
 
 int countNeighbours(int x, int y, int *board, int rows, int cols)
 /* Return the number of neighbours of the (x,y) point */

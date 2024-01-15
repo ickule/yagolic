@@ -1,4 +1,4 @@
-#include "../include/spreadLife.h"
+#include "spreadLife.h"
 #include <stdio.h>
 
 void spreadLife(int *board, int rows, int cols)
