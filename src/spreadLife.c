@@ -1,5 +1,4 @@
 #include "spreadLife.h"
-#include <stdio.h>
 
 void spreadLife(int *board, int rows, int cols)
 /* Scan the field and applies the rules to it */
