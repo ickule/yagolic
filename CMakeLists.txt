@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.25)
-project(gameOfLife)
+project(yagolic)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "bin")
-add_executable(gameOfLife.elf src/copyBoard.c  src/countNeighbours.c  src/gameOfLife.c  src/randomInitBoard.c  src/printBoard.c  src/spreadLife.c)
-target_include_directories(gameOfLife.elf PRIVATE include)
+add_executable(yagolic.elf src/copyBoard.c  src/countNeighbours.c  src/yagolic.c  src/randomInitBoard.c  src/printBoard.c  src/spreadLife.c)
+target_include_directories(yagolic.elf PRIVATE include)

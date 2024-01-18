@@ -1,4 +1,4 @@
-#include "gameOfLife.h"
+#include "yagolic.h"
 
 int main() {
   int rows, cols, i = 0, exit = 0;

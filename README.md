@@ -37,7 +37,7 @@ The program is located in the `bin` folder after compilation.
 You can run it with:
 
 ```sh
-bin/gameOfLife.elf
+bin/yagolic.elf
 ```
 
 ## Contributing
