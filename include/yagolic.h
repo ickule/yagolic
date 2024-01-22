@@ -1,5 +1,5 @@
-#ifndef GAME_OF_LIFE_H_INCLUDED
-#define GAME_OF_LIFE_H_INCLUDED
+#ifndef YAGOLIC_H_INCLUDED
+#define YAGOLIC_H_INCLUDED
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,4 +10,4 @@
 #include "randomInitBoard.h"
 #include "spreadLife.h"
 
-#endif // GAME_OF_LIFE_H_INCLUDED
+#endif /* YAGOLIC_H_INCLUDED */
