@@ -3,10 +3,10 @@
 
 #include <stdlib.h>
 
-#include "copyBoard.h"
-#include "countNeighbours.h"
+#include "copy_board.h"
+#include "count_neighbours.h"
 
-void spreadLife(int *board, int rows, int cols);
+void spread_life(int *board, int rows, int cols);
 /* Scan the board and spread life according to Conway's rules */
 
 #endif /* SPREAD_LIFE_H_INCLUDED */

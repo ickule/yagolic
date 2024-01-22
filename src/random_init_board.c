@@ -1,6 +1,6 @@
-#include "randomInitBoard.h"
+#include "random_init_board.h"
 
-void randomInitBoard(int *board, int rows, int cols)
+void random_init_board(int *board, int rows, int cols)
 /* Initialise the board with random alive/dead */
 {
   srand(time(0));

@@ -17,11 +17,11 @@ int main() {
 
   board = calloc(rows * cols, sizeof *board);
 
-  randomInitBoard(board, rows, cols);
+  random_init_board(board, rows, cols);
 
   while (exit != 1) {
     printf("This is your board after %d turns\n", i);
-    printBoard(board, rows, cols);
+    print_board(board, rows, cols);
     printf("Please press ENTER to see the new generation or 'q' to quit.\n");
     while ((sc = getchar()) != '\n' && sc != EOF) {
       if (sc == 'q' || sc == 'Q') {
@@ -29,7 +29,7 @@ int main() {
       }
     }
     system("clear");
-    spreadLife(board, rows, cols);
+    spread_life(board, rows, cols);
     i++;
   }
 

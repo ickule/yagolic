@@ -1,6 +1,6 @@
-#include "printBoard.h"
+#include "print_board.h"
 
-void printBoard(int *board, int rows, int cols)
+void print_board(int *board, int rows, int cols)
 /* Print the board on the command line */
 {
   char representation;
