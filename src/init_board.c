@@ -3,12 +3,15 @@
 #include <time.h>
 
 #include "board.h"
+#include "null_pointer_check.h"
 
 /* Initialise an array of cells with random dead or alive state*/
 int *random_init_cells(int rows, int cols) {
   srand(time(0));
 
   int *cells = malloc(rows * cols * sizeof(int));
+
+  NULL_POINTER_CHECK(cells);
 
   for (int x = 0; x < rows; x++) {
     for (int y = 0; y < cols; y++) {
