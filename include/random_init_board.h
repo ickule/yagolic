@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void randomInitBoard(int *board, int rows, int cols);
+void random_init_board(int *board, int rows, int cols);
 /* Initialise the board with all cells at 0 */
 
 #endif /* BOARD_H_INCLUDED */

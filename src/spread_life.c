@@ -1,17 +1,17 @@
-#include "spreadLife.h"
+#include "spread_life.h"
 
-void spreadLife(int *board, int rows, int cols)
+void spread_life(int *board, int rows, int cols)
 /* Scan the field and applies the rules to it */
 {
   int neighbours;
-  int *oldBoard;
-  oldBoard = malloc(rows * cols * sizeof *board);
+  int *old_board;
+  old_board = malloc(rows * cols * sizeof *board);
 
-  copyBoard(rows, cols, board, oldBoard);
+  copy_board(rows, cols, board, old_board);
   for (int i = 0; i < rows; i++) {
     for (int j = 0; j < cols; j++) {
-      neighbours = countNeighbours(i, j, oldBoard, rows, cols);
-      if (oldBoard[i * cols + j]) {
+      neighbours = count_neighbours(i, j, old_board, rows, cols);
+      if (old_board[i * cols + j]) {
         /* The cell is alive */
         if (neighbours < 2 || neighbours > 3)
         /* Cell dies if there are less than 2 or more than 3 neighbours */
@@ -28,5 +28,5 @@ void spreadLife(int *board, int rows, int cols)
       }
     }
   }
-  free(oldBoard);
+  free(old_board);
 }

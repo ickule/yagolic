@@ -1,6 +1,6 @@
-#include "copyBoard.h"
+#include "copy_board.h"
 
-void copyBoard(int rows, int cols, int *board, int *copy)
+void copy_board(int rows, int cols, int *board, int *copy)
 /* Copies board into copy */
 {
   for (int i = 0; i < rows; i++) {
