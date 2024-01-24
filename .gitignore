@@ -4,3 +4,4 @@ build/
 *[M|m]ake*
 !CMakeLists.txt
 .cache/
+*ninja*
