@@ -6,11 +6,12 @@ This repository is dedicated to a C command line game of life following the rule
 
 ## Dependencies
 
-This repo uses C17 code, targets GNU/Linux computers and is meant to be compatible with the clang tools.
+This program uses C17 code, targets GNU/Linux computers and is meant to be compatible with the clang tools.
 
 You need the following packages:
 
 - cmake
+- ninja-build (if you want to use `ninja` instead of `make`)
 - clang
 - clang-tidy
 - clang-format
@@ -19,26 +20,27 @@ As an example, if you are using a Debian based distribution, you can use the fol
 
 ```sh
 sudo apt update
-sudo apt install cmake clang clang-tidy clang-format
+sudo apt install cmake ninja-build clang clang-tidy clang-format
 ```
 
-## Compiling
+## Compiling the program
 
-First, set up cmake then run the build:
+### Configuring
 
-```sh
-cmake .
-cmake --build .
-```
+Run `cmake .` to configure the build with standard UNIX makefiles.
+
+Alternatively, run `cmake -G Ninja .` to configure the build with build.ninja files.
+
+### Building
+
+Run `cmake --build .` to build the program.
+
+> [!NOTE]
+> The program is located in the `bin` folder after compilation.
 
 ## Running the program
 
-The program is located in the `bin` folder after compilation.
-You can run it with:
-
-```sh
-bin/yagolic.elf
-```
+Run `bin/yagolic.elf` to execute the program.
 
 ## Contributing
 
