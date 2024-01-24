@@ -1,12 +1,13 @@
 #include "random_init_board.h"
 
 void random_init_board(int *board, int rows, int cols)
-/* Initialise the board with random alive/dead */
+/* Initialise the board with a random dead or alive state */
 {
   srand(time(0));
   for (int i = 0; i < rows; i++) {
     for (int j = 0; j < cols; j++) {
-      board[i * cols + j] = rand() & 1; /* Give random value based on the rest of int division */
+      /* Generate a random 1 or 0 based on the last bit of the int returned by rand() */
+      board[i * cols + j] = rand() & 1;
     }
   }
 }
