@@ -52,4 +52,8 @@ Please correct any errors before pushing top the repository.
 
 ### Linting
 
+Run `clang-tidy src/*.c  include/*.h -- -Iinclude` to lint your code.
+
+Please correct any errors before pushing top the repository.
+
 ## Contacts
