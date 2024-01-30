@@ -46,6 +46,10 @@ Run `bin/yagolic.elf` to execute the program.
 
 ### Formatting
 
+Run `clang-format -i src/*.c include/*.h -Werror --dry-run` to check the format of your code.
+
+Please correct any errors before pushing top the repository.
+
 ### Linting
 
 ## Contacts
