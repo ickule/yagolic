@@ -1,6 +1,6 @@
 ---
 Checks: "clang-diagnostic-*,clang-analyzer-*"
-WarningsAsErrors: ""
+WarningsAsErrors: "clang-diagnostic-*,clang-analyzer-*"
 HeaderFilterRegex: ""
 AnalyzeTemporaryDtors: false
 FormatStyle: llvm
