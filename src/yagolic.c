@@ -1,7 +1,7 @@
 #include "yagolic.h"
 
 int main() {
-  int rows, cols, turns = 0, end = 0;
+  int rows, cols, turns = 0;
   char user_input;
   int *board;
 
@@ -19,16 +19,15 @@ int main() {
 
   random_init_board(board, rows, cols);
 
-  while (end != 1) {
+  while (1) {
     printf("This is your board after %d turns\n", turns);
     print_board(board, rows, cols);
     printf("Please press ENTER to see the new generation or 'q' to quit.\n");
-    while ((user_input = getchar()) != '\n' && user_input != EOF) {
-      if (user_input == 'q' || user_input == 'Q') {
-        end = 1;
-      }
-    }
+    user_input = getchar();
     system("clear");
+    if (user_input == 'q' || user_input == 'Q') {
+      break;
+    }
     spread_life(board, rows, cols);
     turns++;
   }
