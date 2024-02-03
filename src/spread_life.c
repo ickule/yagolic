@@ -1,9 +1,16 @@
+#include <assert.h>
 #include <stdlib.h>
 
 #include "board.h"
 
 /* Return the number of neighbours of the (x,y) point */
 int count_neighbours(int x, int y, board_t board) {
+  assert(board.rows > 0);
+  assert(board.cols > 0);
+  assert(board.cells != NULL);
+  assert(x >= 0 && x <= board.rows);
+  assert(y >= 0 && y <= board.cols);
+
   int neighbours = 0;
 
   /* Iterate over neighbouring cells in a 3x3 grid around the current cell (x, y) */
@@ -20,6 +27,10 @@ int count_neighbours(int x, int y, board_t board) {
 }
 
 void spread_life(board_t board) {
+  assert(board.rows > 0);
+  assert(board.cols > 0);
+  assert(board.cells != NULL);
+
   int neighbours;
   board_t old_board = copy_board(board);
 
