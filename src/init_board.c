@@ -1,3 +1,4 @@
+#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -7,6 +8,9 @@
 
 /* Initialise an array of cells with random dead or alive state*/
 int *random_init_cells(int rows, int cols) {
+  assert(rows > 0);
+  assert(cols > 0);
+
   srand(time(0));
 
   int *cells = malloc(rows * cols * sizeof(int));
