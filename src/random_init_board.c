@@ -3,9 +3,7 @@
 
 #include "board.h"
 
-void random_init_board(int *board, int rows, int cols)
-/* Initialise the board with a random dead or alive state */
-{
+void random_init_board(int *board, int rows, int cols) {
   srand(time(0));
   for (int i = 0; i < rows; i++) {
     for (int j = 0; j < cols; j++) {

@@ -2,9 +2,7 @@
 
 #include "board.h"
 
-void print_board(int *board, int rows, int cols)
-/* Print the board on the command line */
-{
+void print_board(int *board, int rows, int cols) {
   char representation;
   for (int i = 0; i < rows; i++) {
     for (int j = 0; j < cols; j++) {
