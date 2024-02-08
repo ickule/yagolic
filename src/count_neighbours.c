@@ -1,4 +1,4 @@
-#include "count_neighbours.h"
+#include "board.h"
 
 int count_neighbours(int x, int y, int *board, int rows, int cols) {
   int neighbours = 0;
