@@ -4,9 +4,6 @@
 /* Copies the board */
 void copy_board(int rows, int cols, int *board, int *copy);
 
-/* Return the number of neighbours of the (x,y) point */
-int count_neighbours(int x, int y, int *board, int rows, int cols);
-
 /* Print the board on the command line */
 void print_board(int *array, int rows, int cols);
 
