@@ -1,4 +1,6 @@
-#include "spread_life.h"
+#include <stdlib.h>
+
+#include "board.h"
 
 void spread_life(int *board, int rows, int cols)
 /* Scan the field and applies the rules to it */

@@ -1,4 +1,7 @@
-#include "random_init_board.h"
+#include <stdlib.h>
+#include <time.h>
+
+#include "board.h"
 
 void random_init_board(int *board, int rows, int cols)
 /* Initialise the board with a random dead or alive state */

@@ -1,4 +1,7 @@
-#include "yagolic.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "board.h"
 
 int main() {
   int rows, cols, turns = 0;

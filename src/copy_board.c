@@ -1,4 +1,4 @@
-#include "copy_board.h"
+#include "board.h"
 
 void copy_board(int rows, int cols, int *board, int *copy)
 /* Copies board into copy */
