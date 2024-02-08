@@ -2,9 +2,7 @@
 
 #include "board.h"
 
-void spread_life(int *board, int rows, int cols)
-/* Scan the field and applies the rules to it */
-{
+void spread_life(int *board, int rows, int cols) {
   int neighbours;
   int *old_board;
   old_board = malloc(rows * cols * sizeof *board);
