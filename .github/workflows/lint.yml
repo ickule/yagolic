@@ -1,0 +1,13 @@
+---
+name: lint
+run-name: Verify code linting with clang-tidy
+on: [pull_request]
+jobs:
+  clang-tidy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up clang tidy
+        run: sudo apt install clang-tidy
+      - name: Run clang tidy
+        run: clang-tidy src/*.c  include/*.h -- -Iinclude

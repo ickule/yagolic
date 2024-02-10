@@ -1,0 +1,13 @@
+---
+name: format
+run-name: Verify code formatting with clang-format
+on: [pull_request]
+jobs:
+  clang-format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up clang format
+        run: sudo apt install clang-format
+      - name: Run clang format
+        run: clang-format -i src/*.c include/*.h -Werror --dry-run
