@@ -2,11 +2,12 @@
 
 #include "board.h"
 
-void print_board(int *board, int rows, int cols) {
+void print_board(board_t board) {
   char representation;
-  for (int i = 0; i < rows; i++) {
-    for (int j = 0; j < cols; j++) {
-      if (board[i * cols + j]) {
+
+  for (int i = 0; i < board.rows; i++) {
+    for (int j = 0; j < board.cols; j++) {
+      if (board.cells[i * board.cols + j]) {
         representation = '*';
       } else {
         representation = ' ';

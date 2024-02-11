@@ -1,16 +1,23 @@
 #ifndef BOARD_H_INCLUDED
 #define BOARD_H_INCLUDED
 
+typedef struct {
+  int rows;
+  int cols;
+  int *cells;
+} board_t;
+
 /* Copies the board */
-void copy_board(int rows, int cols, int *board, int *copy);
+board_t copy_board(board_t board);
 
 /* Print the board on the command line */
-void print_board(int *array, int rows, int cols);
+void print_board(board_t board);
 
-/* Initialise the board with a random dead or alive state */
-void random_init_board(int *board, int rows, int cols);
+/* Initialise a board by asking user for its dimensions and populating it with random random dead or
+ * alive cells */
+board_t init_board();
 
 /* Scan the board and spread life according to Conway's rules */
-void spread_life(int *board, int rows, int cols);
+void spread_life(board_t board);
 
 #endif /* BOARD_H_INCLUDED */
