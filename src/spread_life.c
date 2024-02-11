@@ -21,7 +21,10 @@ int count_neighbours(int x, int y, board_t board) {
 
 void spread_life(board_t board) {
   int neighbours;
-  board_t old_board = copy_board(board);
+  int old_cells[board.rows * board.cols];
+  board_t old_board = {board.rows, board.cols, old_cells};
+
+  copy_board(board, old_board);
 
   for (int i = 0; i < board.rows; i++) {
     for (int j = 0; j < board.cols; j++) {
@@ -43,6 +46,4 @@ void spread_life(board_t board) {
       }
     }
   }
-
-  free(old_board.cells);
 }

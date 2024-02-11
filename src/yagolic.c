@@ -6,8 +6,9 @@
 int main() {
   int rows, cols, turns = 0;
   char user_input;
+  int cells[BOARD_MAX_SIZE];
 
-  board_t board = init_board();
+  board_t board = init_board(cells);
 
   while (1) {
     printf("This is your board after %d turns\n", turns);
@@ -21,8 +22,6 @@ int main() {
     spread_life(board);
     turns++;
   }
-
-  free(board.cells);
 
   return 0;
 }

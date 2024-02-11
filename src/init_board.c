@@ -4,37 +4,46 @@
 
 #include "board.h"
 
-/* Initialise an array of cells with random dead or alive state*/
-int *random_init_cells(int rows, int cols) {
+/* Initialise an array of cells of the board with random dead or alive state*/
+void random_init_board(board_t board) {
   srand(time(0));
 
-  int *cells = malloc(rows * cols * sizeof(int));
-
-  for (int x = 0; x < rows; x++) {
-    for (int y = 0; y < cols; y++) {
+  for (int x = 0; x < board.rows; x++) {
+    for (int y = 0; y < board.cols; y++) {
       /* Generate a random 1 or 0 based on the last bit of the int returned by rand() */
-      cells[x * cols + y] = rand() & 1;
+      board.cells[x * board.cols + y] = rand() & 1;
     }
   }
-
-  return cells;
 }
 
 /* Initialise a board by asking user for its dimensions and populating it with random random dead or
  * alive cells */
-board_t init_board() {
-  int rows, cols;
+board_t init_board(int *cells) {
+  int rows = -1, cols = -1;
   char user_input;
 
   system("clear");
   printf("Welcome to this game of life! \n\n");
-  printf("How many ROWS shall your board have ?\n");
-  scanf("%d", &rows); // NOLINT acanf_s is not implemented in gnu c standard
-  printf("How many COLUMNS shall your board have ?\n");
-  scanf("%d", &cols); // NOLINT acanf_s is not implemented in gnu c standard
+
+  while (1) {
+    printf("How many ROWS shall your board have ?\n");
+    scanf("%d", &rows); // NOLINT acanf_s is not implemented in gnu c standard
+    printf("How many COLUMNS shall your board have ?\n");
+    scanf("%d", &cols); // NOLINT acanf_s is not implemented in gnu c standard
+    system("clear");
+    if (rows * cols > 0 && rows * cols <= BOARD_MAX_SIZE) {
+      break;
+    } else {
+      printf("The board cannot be bigger than %d cells. Please enter new size.\n", BOARD_MAX_SIZE);
+    }
+  }
+
   while ((user_input = getchar()) != '\n' && user_input != EOF)
     ; /* discard the trailing '\n' character */
-  system("clear");
 
-  return (board_t){rows, cols, random_init_cells(rows, cols)};
+  board_t board = {rows, cols, cells};
+
+  random_init_board(board);
+
+  return board;
 }
