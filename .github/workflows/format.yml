@@ -8,6 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Set up clang format
-        run: sudo apt install clang-format
+        run: sudo apt update && sudo apt install clang-format
       - name: Run clang format
         run: clang-format -i src/*.c include/*.h -Werror --dry-run
