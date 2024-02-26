@@ -6,6 +6,28 @@
 #include "board.h"
 #include "null_pointer_check.h"
 
+/* Clear the input buffer from unused characters, including '\n' */
+void clear_input_buffer() {
+  char leftover;
+
+  while ((leftover = getchar()) != '\n' && leftover != EOF) {
+  }
+}
+
+/* Ask the user for number*/
+int get_number_from_user() {
+  int input;
+
+  while (!scanf("%d", &input) || input <= 1) { // NOLINT
+    /* scanf_s is not implemented in gnu c standard */
+    printf("Your input is invalid, it should be an whole number bigger than 1.\n");
+    clear_input_buffer();
+  }
+  clear_input_buffer();
+
+  return input;
+}
+
 /* Initialise an array of cells with random dead or alive state*/
 int *random_init_cells(int rows, int cols) {
   assert(rows > 0);
@@ -31,16 +53,15 @@ int *random_init_cells(int rows, int cols) {
  * alive cells */
 board_t init_board() {
   int rows, cols;
-  char user_input;
 
   system("clear");
+
   printf("Welcome to this game of life! \n\n");
   printf("How many ROWS shall your board have ?\n");
-  scanf("%d", &rows); // NOLINT acanf_s is not implemented in gnu c standard
+  rows = get_number_from_user();
   printf("How many COLUMNS shall your board have ?\n");
-  scanf("%d", &cols); // NOLINT acanf_s is not implemented in gnu c standard
-  while ((user_input = getchar()) != '\n' && user_input != EOF)
-    ; /* discard the trailing '\n' character */
+  cols = get_number_from_user();
+
   system("clear");
 
   return (board_t){rows, cols, random_init_cells(rows, cols)};
