@@ -8,6 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Set up clang tidy
-        run: sudo apt install clang-tidy
+        run: sudo apt update && sudo apt install clang-tidy
       - name: Run clang tidy
         run: clang-tidy src/*.c  include/*.h -- -Iinclude

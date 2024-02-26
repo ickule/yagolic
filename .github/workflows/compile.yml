@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Set up cmake
-        run: sudo apt install cmake
+        run: sudo apt update && sudo apt install cmake
       - name: Configure the build
         run: cmake .
       - name: Build the program
@@ -18,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Set up cmake and ninja-build
-        run: sudo apt install cmake ninja-build
+        run: sudo apt update &&  sudo apt install cmake ninja-build
       - name: Configure the build
         run: cmake -GNinja .
       - name: Build the program
