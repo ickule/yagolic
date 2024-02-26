@@ -4,7 +4,7 @@
 #include "board.h"
 
 int main() {
-  int rows, cols, turns = 0;
+  int turns = 0;
   char user_input;
 
   board_t board = init_board();
