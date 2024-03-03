@@ -39,10 +39,10 @@ int *random_init_cells(int rows, int cols) {
 
   NULL_POINTER_CHECK(cells);
 
-  for (int x = 0; x < rows; x++) {
-    for (int y = 0; y < cols; y++) {
+  for (int i = 0; i < rows; i++) {
+    for (int j = 0; j < cols; j++) {
       /* Generate a random 1 or 0 based on the last bit of the int returned by rand() */
-      cells[x * cols + y] = rand() & 1;
+      cells[i * cols + j] = rand() & 1;
     }
   }
 
