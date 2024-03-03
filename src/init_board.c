@@ -39,8 +39,8 @@ int *random_init_cells(int rows, int cols) {
 
   NULL_POINTER_CHECK(cells);
 
-  for (int i = 0; i < rows; i++) {
-    for (int j = 0; j < cols; j++) {
+  for (int i = 0; i < rows; ++i) {
+    for (int j = 0; j < cols; ++j) {
       /* Generate a random 1 or 0 based on the last bit of the int returned by rand() */
       cells[i * cols + j] = rand() & 1;
     }

@@ -19,7 +19,7 @@ int main() {
       break;
     }
     spread_life(board);
-    turns++;
+    ++turns;
   }
 
   free(board.cells);
