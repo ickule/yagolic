@@ -2,9 +2,9 @@
 #define BOARD_H_INCLUDED
 
 typedef struct {
-  int rows;
-  int cols;
-  int *cells;
+  unsigned char rows;
+  unsigned char cols;
+  unsigned char *cells;
 } board_t;
 
 /* Copies the board */

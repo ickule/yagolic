@@ -4,13 +4,13 @@
 #include "board.h"
 
 int main() {
-  int turns = 0;
+  unsigned char turns = 0;
   char user_input;
 
   board_t board = init_board();
 
   while (1) {
-    printf("This is your board after %d turns\n", turns);
+    printf("This is your board after %hhu turns\n", turns);
     print_board(board);
     printf("Please press ENTER to see the new generation or 'q' to quit.\n");
     user_input = getchar();

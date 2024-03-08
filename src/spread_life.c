@@ -4,18 +4,19 @@
 #include "board.h"
 
 /* Return the number of neighbours of the (x,y) point */
-int count_neighbours(int x, int y, board_t board) {
+unsigned char count_neighbours(unsigned char x, unsigned char y, board_t board) {
   assert(board.rows > 0);
   assert(board.cols > 0);
   assert(board.cells != NULL);
   assert(x >= 0 && x <= board.rows);
   assert(y >= 0 && y <= board.cols);
 
-  int neighbours = 0;
+  unsigned char neighbours = 0;
 
   /* Iterate over neighbouring cells in a 3x3 grid around the current cell (x, y) */
-  for (int i = x - 1; i <= x + 1; ++i) {
-    for (int j = y - 1; j <= y + 1; ++j) {
+  /* Loop variable type need to be able to hold 1 more value that the max of type for x and y*/
+  for (short i = x - 1; i <= x + 1; ++i) {
+    for (short j = y - 1; j <= y + 1; ++j) {
       /* Check if the neighbouring cell is within the bounds of the board */
       if (i >= 0 && i < board.rows && j >= 0 && j < board.cols && !(i == x && j == y)) {
         neighbours += board.cells[i * board.cols + j];
@@ -31,11 +32,11 @@ void spread_life(board_t board) {
   assert(board.cols > 0);
   assert(board.cells != NULL);
 
-  int neighbours;
+  unsigned char neighbours;
   board_t old_board = copy_board(board);
 
-  for (int i = 0; i < board.rows; ++i) {
-    for (int j = 0; j < board.cols; ++j) {
+  for (unsigned char i = 0; i < board.rows; ++i) {
+    for (unsigned char j = 0; j < board.cols; ++j) {
       neighbours = count_neighbours(i, j, old_board);
       if (old_board.cells[i * board.cols + j]) {
         /* The cell is alive */
