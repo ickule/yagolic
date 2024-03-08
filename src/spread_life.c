@@ -5,11 +5,9 @@
 
 /* Return the number of neighbours of the (x,y) point */
 unsigned char count_neighbours(unsigned char x, unsigned char y, board_t board) {
-  assert(board.rows > 0);
-  assert(board.cols > 0);
   assert(board.cells != NULL);
-  assert(x >= 0 && x <= board.rows);
-  assert(y >= 0 && y <= board.cols);
+  assert(x <= board.rows);
+  assert(y <= board.cols);
 
   unsigned char neighbours = 0;
 
@@ -28,8 +26,6 @@ unsigned char count_neighbours(unsigned char x, unsigned char y, board_t board) 
 }
 
 void spread_life(board_t board) {
-  assert(board.rows > 0);
-  assert(board.cols > 0);
   assert(board.cells != NULL);
 
   unsigned char neighbours;

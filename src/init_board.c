@@ -1,4 +1,3 @@
-#include <assert.h>
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -32,9 +31,6 @@ unsigned char get_number_from_user() {
 
 /* Initialise an array of cells with random dead or alive state*/
 unsigned char *random_init_cells(unsigned char rows, unsigned char cols) {
-  assert(rows > 0);
-  assert(cols > 0);
-
   srand(time(0));
 
   unsigned char *cells = malloc(rows * cols * sizeof(unsigned char));

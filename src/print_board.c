@@ -4,8 +4,6 @@
 #include "board.h"
 
 void print_board(board_t board) {
-  assert(board.rows > 0);
-  assert(board.cols > 0);
   assert(board.cells != NULL);
 
   char representation;

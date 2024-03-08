@@ -5,8 +5,6 @@
 #include "null_pointer_check.h"
 
 board_t copy_board(board_t board) {
-  assert(board.rows > 0);
-  assert(board.cols > 0);
   assert(board.cells != NULL);
 
   unsigned char *cells = malloc(board.rows * board.cols * sizeof(unsigned char));
