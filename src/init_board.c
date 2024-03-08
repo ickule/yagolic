@@ -1,4 +1,5 @@
 #include <assert.h>
+#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -15,12 +16,13 @@ void clear_input_buffer() {
 }
 
 /* Ask the user for number*/
-int get_number_from_user() {
-  int input;
+unsigned char get_number_from_user() {
+  /* Input is bigger that return type to check for max value*/
+  unsigned short input;
 
-  while (!scanf("%d", &input) || input <= 1) { // NOLINT
+  while (!scanf("%hu", &input) || input <= 1 || input > UCHAR_MAX) { // NOLINT
     /* scanf_s is not implemented in gnu c standard */
-    printf("Your input is invalid, it should be an whole number bigger than 1.\n");
+    printf("Your input is invalid, it should be an whole number between 2 and %d.\n", UCHAR_MAX);
     clear_input_buffer();
   }
   clear_input_buffer();
@@ -29,18 +31,18 @@ int get_number_from_user() {
 }
 
 /* Initialise an array of cells with random dead or alive state*/
-int *random_init_cells(int rows, int cols) {
+unsigned char *random_init_cells(unsigned char rows, unsigned char cols) {
   assert(rows > 0);
   assert(cols > 0);
 
   srand(time(0));
 
-  int *cells = malloc(rows * cols * sizeof(int));
+  unsigned char *cells = malloc(rows * cols * sizeof(unsigned char));
 
   NULL_POINTER_CHECK(cells);
 
-  for (int i = 0; i < rows; ++i) {
-    for (int j = 0; j < cols; ++j) {
+  for (unsigned char i = 0; i < rows; ++i) {
+    for (unsigned char j = 0; j < cols; ++j) {
       /* Generate a random 1 or 0 based on the last bit of the int returned by rand() */
       cells[i * cols + j] = rand() & 1;
     }
@@ -52,7 +54,7 @@ int *random_init_cells(int rows, int cols) {
 /* Initialise a board by asking user for its dimensions and populating it with random random dead or
  * alive cells */
 board_t init_board() {
-  int rows, cols;
+  unsigned char rows, cols;
 
   system("clear");
 
