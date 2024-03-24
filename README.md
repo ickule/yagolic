@@ -6,31 +6,66 @@ This repository is dedicated to a C command line game of life following the rule
 
 ## Dependencies
 
-This program uses C17 code, targets GNU/Linux computers and is meant to be compatible with the clang tools.
+This program uses C17 code, targets GNU/Linux computers and is meant to be compatible with the LLVM toolchain.
 
-You need the following packages:
+You need the following tools:
 
 - cmake
-- ninja-build (if you want to use `ninja` instead of `make`)
+- ninja
 - clang
 - clang-tidy
 - clang-format
 
 As an example, if you are using a Debian based distribution, you can use the following:
 
-```sh
-sudo apt update
-sudo apt install cmake ninja-build clang clang-tidy clang-format
-```
+- On Debian:
+
+    ```sh
+    sudo apt update
+    sudo apt install cmake ninja-build clang clang-tidy clang-format
+    ```
+
+- On Arch Linux:
+
+    ```sh
+    pacman -S cmake ninja clang
+    ```
 
 ## Compiling the program
 
 ### Configuring
 
-Run `cmake .` to configure the build with standard UNIX makefiles.
+Run `cmake` to configure the build environment with your preferred build system:
 
-Alternatively, run `cmake -G Ninja .` to configure the build with build.ninja files.
+- With the default build system (usually Unix Makefiles):
 
+    ```sh
+    cmake .
+    ```
+
+- With Ninja build system:
+
+    ```sh
+    cmake -GNinja .
+    ```
+
+> [!NOTE]
+> You can select your preferred compiler by prepending your command with the `CC` variable definition.
+>
+> For example, to use `clang`, you can run the following:
+>
+> - With the default build system:
+>
+>     ```sh
+>    CC=/usr/bin/clang cmake .
+>    ```
+>
+> - With Ninja build system:
+>
+>    ```sh
+>    CC=/usr/bin/clang cmake -GNinja .
+>    ```
+>
 ### Building
 
 Run `cmake --build .` to build the program.
@@ -48,12 +83,10 @@ Run `bin/yagolic.elf` to execute the program.
 
 Run `clang-format -i src/*.c include/*.h -Werror --dry-run` to check the format of your code.
 
-Please correct any errors before pushing top the repository.
+Please correct any errors before pushing to the repository.
 
 ### Linting
 
 Run `clang-tidy src/*.c  include/*.h -- -Iinclude` to lint your code.
 
-Please correct any errors before pushing top the repository.
-
-## Contacts
+Please correct any errors before pushing to the repository.
