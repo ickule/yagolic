@@ -1,7 +1,20 @@
+# VSCode folder
 .vscode/
+
+# Build directories
 bin/
-build/
-*[M|m]ake*
-!CMakeLists.txt
+build*/
+
+# Cache directories
 .cache/
+
+# Make files
+*[M|m]ake*
+
+# Ninja files
 *ninja*
+
+# cmake files and folders to be included
+!CMakeLists.txt
+!cmake/
+!cmake/*
