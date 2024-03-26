@@ -75,7 +75,7 @@ Run `cmake --build .` to build the program.
 
 ## Running the program
 
-Run `bin/yagolic.elf` to execute the program.
+Run `bin/yagolic` to execute the program.
 
 ## Contributing
 
