@@ -4,6 +4,7 @@
 #include <time.h>
 
 #include "board.h"
+#include "clear_screen.h"
 #include "null_pointer_check.h"
 
 /* Clear the input buffer from unused characters, including '\n' */
@@ -52,7 +53,7 @@ unsigned char *random_init_cells(unsigned char rows, unsigned char cols) {
 board_t init_board() {
   unsigned char rows, cols;
 
-  system("clear");
+  clear_screen();
 
   printf("Welcome to this game of life! \n\n");
   printf("How many ROWS shall your board have ?\n");
@@ -60,7 +61,7 @@ board_t init_board() {
   printf("How many COLUMNS shall your board have ?\n");
   cols = get_number_from_user();
 
-  system("clear");
+  clear_screen();
 
   return (board_t){rows, cols, random_init_cells(rows, cols)};
 }

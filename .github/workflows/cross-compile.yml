@@ -1,0 +1,45 @@
+---
+name: cross-compile
+run-name: Verify code cross-compilation targetting Windows with both make and ninja
+on: [pull_request]
+jobs:
+  make-gcc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up cmake
+        run: sudo apt update && sudo apt install cmake mingw-w64
+      - name: Configure the build
+        run: cmake -DCMAKE_TOOLCHAIN_FILE=cmake/Toolchain-gcc-windows.cmake -Bbuild-windows .
+      - name: Build the program
+        run: cmake --build build-windows
+  ninja-gcc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up cmake and ninja-build
+        run: sudo apt update &&  sudo apt install cmake ninja-build mingw-w64
+      - name: Configure the build
+        run: cmake -DCMAKE_TOOLCHAIN_FILE=cmake/Toolchain-gcc-windows.cmake -Bbuild-windows -GNinja .
+      - name: Build the program
+        run: cmake --build build-windows
+  make-clang:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up cmake
+        run: sudo apt update && sudo apt install cmake mingw-w64 clang
+      - name: Configure the build
+        run: cmake -DCMAKE_TOOLCHAIN_FILE=cmake/Toolchain-clang-windows.cmake -DCMAKE_EXE_LINKER_FLAGS="${CMAKE_EXE_LINKER_FLAGS} -L/usr/lib/gcc/x86_64-w64-mingw32/10-win32/" -Bbuild-windows .
+      - name: Build the program
+        run: cmake --build build-windows
+  ninja-clang:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up cmake and ninja-build
+        run: sudo apt install cmake ninja-build mingw-w64 clang
+      - name: Configure the build
+        run: cmake -DCMAKE_TOOLCHAIN_FILE=cmake/Toolchain-clang-windows.cmake -DCMAKE_EXE_LINKER_FLAGS="${CMAKE_EXE_LINKER_FLAGS} -L/usr/lib/gcc/x86_64-w64-mingw32/10-win32/" -Bbuild-windows -GNinja .
+      - name: Build the program
+        run: cmake --build build-windows
