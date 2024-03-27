@@ -11,5 +11,6 @@ add_executable(
     src/print_board.c
     src/spread_life.c
     src/null_pointer_check.c
+    src/clear_screen.c
     )
 target_include_directories(yagolic PRIVATE include)

@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 #include "board.h"
+#include "clear_screen.h"
 
 int main() {
   unsigned char turns = 0;
@@ -14,7 +15,7 @@ int main() {
     print_board(board);
     printf("Please press ENTER to see the new generation or 'q' to quit.\n");
     user_input = getchar();
-    system("clear");
+    clear_screen();
     if (user_input == 'q' || user_input == 'Q') {
       break;
     }
