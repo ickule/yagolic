@@ -15,9 +15,11 @@ unsigned char count_neighbours(unsigned char x, unsigned char y, board_t board) 
   /* Loop variable type need to be able to hold 1 more value that the max of type for x and y*/
   for (short i = x - 1; i <= x + 1; ++i) {
     for (short j = y - 1; j <= y + 1; ++j) {
-      /* Check if the neighbouring cell is within the bounds of the board */
-      if (i >= 0 && i < board.rows && j >= 0 && j < board.cols && !(i == x && j == y)) {
-        neighbours += board.cells[i * board.cols + j];
+      /* Check if the neighbouring cell is within the bounds of the board and if the cell is alive
+       before considering it a neighbour */
+      if (i >= 0 && i < board.rows && j >= 0 && j < board.cols && !(i == x && j == y) &&
+          board.cells[i * board.cols + j]) {
+        ++neighbours;
       }
     }
   }
