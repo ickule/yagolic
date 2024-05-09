@@ -4,7 +4,7 @@
 typedef struct {
   unsigned char rows;
   unsigned char cols;
-  unsigned char *cells;
+  short *cells;
 } board_t;
 
 /* Copies the board */

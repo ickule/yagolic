@@ -31,10 +31,10 @@ unsigned char get_number_from_user() {
 }
 
 /* Initialise an array of cells with random dead or alive state*/
-unsigned char *random_init_cells(unsigned char rows, unsigned char cols) {
+short *random_init_cells(unsigned char rows, unsigned char cols) {
   srand(time(0));
 
-  unsigned char *cells = malloc(rows * cols * sizeof(unsigned char));
+  short *cells = malloc(rows * cols * sizeof(short));
 
   NULL_POINTER_CHECK(cells);
 

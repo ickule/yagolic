@@ -7,7 +7,7 @@
 board_t copy_board(board_t board) {
   assert(board.cells != NULL);
 
-  unsigned char *cells = malloc(board.rows * board.cols * sizeof(unsigned char));
+  short *cells = malloc(board.rows * board.cols * sizeof(short));
 
   NULL_POINTER_CHECK(cells);
 
