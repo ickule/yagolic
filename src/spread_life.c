@@ -39,16 +39,22 @@ void spread_life(board_t board) {
       if (old_board.cells[i * board.cols + j]) {
         /* The cell is alive */
         if (neighbours < 2 || neighbours > 3)
-        /* Cell dies if there are less than 2 or more than 3 neighbours */
+        /* Cell dies if it has less than 2 or more than 3 neighbours */
         {
           board.cells[i * board.cols + j] = 0;
+        } else {
+          /* Cell stays alive so we reset its value */
+          board.cells[i * board.cols + j] = 1;
         }
       } else {
         /* The cell is dead */
         if (neighbours == 3)
-        /* Cell comes to life if there is exactly 3 neighbours */
+        /* Cell comes to life if it has exactly 3 neighbours */
         {
           board.cells[i * board.cols + j] = 1;
+        } else {
+          /* Cell stays dead so we reset its value */
+          board.cells[i * board.cols + j] = 0;
         }
       }
     }
